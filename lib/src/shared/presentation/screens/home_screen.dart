@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/i18n/translations.g.dart';
+import '../../shared.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -14,8 +15,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -23,17 +22,9 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: child,
+      bottomNavigationBar: HomeNavigationBar(
+        location: location,
+      ),
     );
-  }
-
-  String getTitle(String location) {
-    switch (location) {
-      case '/':
-        return i18n.todo.title;
-      case '/finance':
-        return i18n.finance.title;
-      default:
-        return '';
-    }
   }
 }

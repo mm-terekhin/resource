@@ -7,6 +7,10 @@ class Palette extends ThemeExtension<Palette> {
     // Backgrounds
     required this.bgPrimary,
     required this.bgSecondary,
+    // Icons
+    required this.iconPrimary,
+    required this.iconSecondary,
+    required this.iconAccentFirst,
   });
 
   const Palette.dark()
@@ -16,6 +20,10 @@ class Palette extends ThemeExtension<Palette> {
           // Backgrounds
           bgPrimary: const Color(0xFF191D23),
           bgSecondary: const Color(0xFFDEDCDC),
+          // Icons
+          iconPrimary: const Color(0xFFDEDCDC),
+          iconSecondary: const Color(0xFF191D23),
+          iconAccentFirst: const Color(0xFF57707A),
         );
 
   // Text
@@ -25,6 +33,11 @@ class Palette extends ThemeExtension<Palette> {
   final Color bgPrimary;
   final Color bgSecondary;
 
+  // Icons
+  final Color iconPrimary;
+  final Color iconSecondary;
+  final Color iconAccentFirst;
+
   @override
   Palette copyWith({
     // Text
@@ -32,6 +45,10 @@ class Palette extends ThemeExtension<Palette> {
     // Backgrounds
     Color? bgPrimary,
     Color? bgSecondary,
+    // Icons
+    Color? iconPrimary,
+    Color? iconSecondary,
+    Color? iconAccentFirst,
   }) {
     return Palette(
       // Text
@@ -39,6 +56,10 @@ class Palette extends ThemeExtension<Palette> {
       // Backgrounds
       bgPrimary: bgPrimary ?? this.bgPrimary,
       bgSecondary: bgSecondary ?? this.bgSecondary,
+      // Icons
+      iconPrimary: iconPrimary ?? this.iconPrimary,
+      iconSecondary: iconSecondary ?? this.iconSecondary,
+      iconAccentFirst: iconAccentFirst ?? this.iconAccentFirst,
     );
   }
 
@@ -54,6 +75,10 @@ class Palette extends ThemeExtension<Palette> {
       // Backgrounds
       bgPrimary: Color.lerp(bgPrimary, other.bgPrimary, t)!,
       bgSecondary: Color.lerp(bgSecondary, other.bgSecondary, t)!,
+      // Icons
+      iconPrimary: Color.lerp(iconPrimary, other.iconPrimary, t)!,
+      iconSecondary: Color.lerp(iconSecondary, other.iconSecondary, t)!,
+      iconAccentFirst: Color.lerp(iconAccentFirst, other.iconAccentFirst, t)!,
     );
   }
 }
