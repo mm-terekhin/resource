@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../app/i18n/translations.g.dart';
+import '../../shared.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -23,6 +24,9 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: child,
+      bottomNavigationBar: HomeNavigationBar(
+        location: location,
+      ),
     );
   }
 

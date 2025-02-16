@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../src/features/features.dart';
 import '../src/shared/shared.dart';
 
 class AppRouter {
@@ -15,12 +16,21 @@ class AppRouter {
         },
         routes: [
           GoRoute(
-            path: '/',
-            name: 'todo',
+            path: '/gaols',
+            name: 'gaols',
             pageBuilder: (context, state) => customTransitionPage(
               context: context,
               state: state,
-              child: const TodoScreen(),
+              child: const GoalsScreen(),
+            ),
+          ),
+          GoRoute(
+            path: '/',
+            name: 'current_tasks',
+            pageBuilder: (context, state) => customTransitionPage(
+              context: context,
+              state: state,
+              child: const CurrentTasksScreen(),
             ),
           ),
           GoRoute(
@@ -30,6 +40,15 @@ class AppRouter {
               context: context,
               state: state,
               child: const FinanceScreen(),
+            ),
+          ),
+          GoRoute(
+            path: '/user_settings',
+            name: 'user_settings',
+            pageBuilder: (context, state) => customTransitionPage(
+              context: context,
+              state: state,
+              child: const UserSettingsScreen(),
             ),
           ),
         ],

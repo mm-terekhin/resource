@@ -22,6 +22,7 @@ class DarkThemeBuilder extends ThemeBuilder {
       fontFamily: _fontFamily,
       textTheme: textTheme,
       scaffoldBackgroundColor: _palette.bgPrimary,
+      iconButtonTheme: _iconButtonThemeBuilder(),
       extensions: [
         _palette,
         radii,
@@ -35,6 +36,26 @@ class DarkThemeBuilder extends ThemeBuilder {
         backgroundColor: _palette.bgPrimary,
         titleTextStyle: _defaultTextTheme.titleLarge,
         foregroundColor: _palette.bgSecondary,
+      );
+
+  IconButtonThemeData _iconButtonThemeBuilder() => IconButtonThemeData(
+        style: ButtonStyle(
+          overlayColor: WidgetStatePropertyAll(
+            _palette.iconPrimary.withOpacity(0.5),
+          ),
+          iconSize: const WidgetStatePropertyAll(
+            24,
+          ),
+          iconColor: WidgetStateProperty.resolveWith(
+            (state) {
+              if (state.contains(WidgetState.pressed)) {
+                return _palette.bgPrimary;
+              }
+
+              return _palette.iconPrimary;
+            },
+          ),
+        ),
       );
 
   TextTheme get _defaultTextTheme => textThemeBuilder();

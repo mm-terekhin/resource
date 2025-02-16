@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FinanceView extends StatelessWidget {
-  const FinanceView({super.key});
+class GoalsScreen extends StatelessWidget {
+  const GoalsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
