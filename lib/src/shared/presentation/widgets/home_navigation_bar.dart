@@ -52,15 +52,15 @@ class HomeNavigationBar extends StatelessWidget {
                           return theme.palette.bgPrimary;
                         }
 
-                        return location == '/gaols'
+                        return location == '/goals'
                             ? theme.palette.iconAccentFirst
                             : theme.palette.iconPrimary;
                       },
                     ),
                   ),
                   onPressed: () {
-                    if (location != '/gaols') {
-                      router.go('/gaols');
+                    if (location != '/goals') {
+                      router.go('/goals');
                     }
                   },
                 ),

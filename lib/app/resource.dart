@@ -30,8 +30,9 @@ class Resource extends StatelessWidget {
   }
 
   Widget _getApp(BuildContext context) => MaterialApp.router(
+    
+        debugShowCheckedModeBanner: false,
         locale: TranslationProvider.of(context).flutterLocale,
-        // use provider
         supportedLocales: AppLocaleUtils.supportedLocales,
         localizationsDelegates: GlobalMaterialLocalizations.delegates,
         routerConfig: GetIt.instance<AppRouter>().router,

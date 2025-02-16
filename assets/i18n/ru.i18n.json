@@ -1,12 +1,21 @@
 {
-    "appName": "Resource",
-    "todo": {
-        "title": "Todo",
-        "tasksTitle": "Задачи",
-        "goalsTitle": "Цели",
-        "ideasTitle": "Идеи"
-    },
-    "finance": {
-        "title": "Финансы"
-    }
+  "appName": "Resource",
+  "goals": {
+    "title": "Цели"
+  },
+  "finance": {
+    "title": "Финансы"
+  },
+  "shared" : {
+    "priority" : "Приоритет:",
+    "termUp" : "Срок до:"
+  },
+  "textFieldLabel": {
+    "title": "Название...",
+    "comment" : "Комментарий...",
+    "smallTaskAdd" : "Добавить подзадачу"
+  },
+  "buttonTitle" : {
+    "save" : "Сохранить"
+  }
 }

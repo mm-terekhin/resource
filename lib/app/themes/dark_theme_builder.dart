@@ -23,6 +23,7 @@ class DarkThemeBuilder extends ThemeBuilder {
       textTheme: textTheme,
       scaffoldBackgroundColor: _palette.bgPrimary,
       iconButtonTheme: _iconButtonThemeBuilder(),
+      floatingActionButtonTheme: _floatingActionButtonThemeBuilder(),
       extensions: [
         _palette,
         radii,
@@ -33,9 +34,11 @@ class DarkThemeBuilder extends ThemeBuilder {
   }
 
   AppBarTheme _appBarThemeBuilder() => AppBarTheme(
+        toolbarHeight: 66,
         backgroundColor: _palette.bgPrimary,
         titleTextStyle: _defaultTextTheme.titleLarge,
-        foregroundColor: _palette.bgSecondary,
+
+        // foregroundColor: _palette.bgSecondary,
       );
 
   IconButtonThemeData _iconButtonThemeBuilder() => IconButtonThemeData(
@@ -56,6 +59,12 @@ class DarkThemeBuilder extends ThemeBuilder {
             },
           ),
         ),
+      );
+
+  FloatingActionButtonThemeData _floatingActionButtonThemeBuilder() =>
+      FloatingActionButtonThemeData(
+        backgroundColor: _palette.buttonPrimary,
+        foregroundColor: _palette.textPrimary,
       );
 
   TextTheme get _defaultTextTheme => textThemeBuilder();

@@ -1,2 +1,3 @@
 export 'device.dart';
-export 'todo_category.dart';
+export 'priority.dart';
+export 'small_task.dart';

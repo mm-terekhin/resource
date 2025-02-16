@@ -34,21 +34,21 @@ class TranslationsRu implements Translations {
 
 	// Translations
 	@override String get appName => 'Resource';
-	@override late final _TranslationsTodoRu todo = _TranslationsTodoRu._(_root);
+	@override late final _TranslationsGoalsRu goals = _TranslationsGoalsRu._(_root);
 	@override late final _TranslationsFinanceRu finance = _TranslationsFinanceRu._(_root);
+	@override late final _TranslationsSharedRu shared = _TranslationsSharedRu._(_root);
+	@override late final _TranslationsTextFieldLabelRu textFieldLabel = _TranslationsTextFieldLabelRu._(_root);
+	@override late final _TranslationsButtonTitleRu buttonTitle = _TranslationsButtonTitleRu._(_root);
 }
 
-// Path: todo
-class _TranslationsTodoRu implements TranslationsTodoEn {
-	_TranslationsTodoRu._(this._root);
+// Path: goals
+class _TranslationsGoalsRu implements TranslationsGoalsEn {
+	_TranslationsGoalsRu._(this._root);
 
 	final TranslationsRu _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'Todo';
-	@override String get tasksTitle => 'Задачи';
-	@override String get goalsTitle => 'Цели';
-	@override String get ideasTitle => 'Идеи';
+	@override String get title => 'Цели';
 }
 
 // Path: finance
@@ -61,17 +61,53 @@ class _TranslationsFinanceRu implements TranslationsFinanceEn {
 	@override String get title => 'Финансы';
 }
 
+// Path: shared
+class _TranslationsSharedRu implements TranslationsSharedEn {
+	_TranslationsSharedRu._(this._root);
+
+	final TranslationsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get priority => 'Приоритет:';
+	@override String get termUp => 'Срок до:';
+}
+
+// Path: textFieldLabel
+class _TranslationsTextFieldLabelRu implements TranslationsTextFieldLabelEn {
+	_TranslationsTextFieldLabelRu._(this._root);
+
+	final TranslationsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Название...';
+	@override String get comment => 'Комментарий...';
+	@override String get smallTaskAdd => 'Добавить подзадачу';
+}
+
+// Path: buttonTitle
+class _TranslationsButtonTitleRu implements TranslationsButtonTitleEn {
+	_TranslationsButtonTitleRu._(this._root);
+
+	final TranslationsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get save => 'Сохранить';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 extension on TranslationsRu {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'appName': return 'Resource';
-			case 'todo.title': return 'Todo';
-			case 'todo.tasksTitle': return 'Задачи';
-			case 'todo.goalsTitle': return 'Цели';
-			case 'todo.ideasTitle': return 'Идеи';
+			case 'goals.title': return 'Цели';
 			case 'finance.title': return 'Финансы';
+			case 'shared.priority': return 'Приоритет:';
+			case 'shared.termUp': return 'Срок до:';
+			case 'textFieldLabel.title': return 'Название...';
+			case 'textFieldLabel.comment': return 'Комментарий...';
+			case 'textFieldLabel.smallTaskAdd': return 'Добавить подзадачу';
+			case 'buttonTitle.save': return 'Сохранить';
 			default: return null;
 		}
 	}

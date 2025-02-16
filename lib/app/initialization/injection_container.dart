@@ -1,6 +1,5 @@
 import 'package:get_it/get_it.dart';
-
-import '../../src/shared/presentation/blocs/todo_bloc/todo_bloc.dart';
+import '../../src/features/features.dart';
 import '../app_router.dart';
 
 final _getIt = GetIt.instance;
@@ -26,7 +25,7 @@ Future<void> _registerRepositories() async {}
 Future<void> _registerUseCases() async {}
 
 Future<void> _registerBlocs() async {
-  _getIt.registerLazySingleton<TodoBloc>(
-    TodoBloc.new,
+  _getIt.registerFactory<CreateGoalBloc>(
+    CreateGoalBloc.new,
   );
 }

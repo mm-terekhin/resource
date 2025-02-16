@@ -16,8 +16,8 @@ class AppRouter {
         },
         routes: [
           GoRoute(
-            path: '/gaols',
-            name: 'gaols',
+            path: '/goals',
+            name: 'goals',
             pageBuilder: (context, state) => customTransitionPage(
               context: context,
               state: state,
@@ -52,6 +52,15 @@ class AppRouter {
             ),
           ),
         ],
+      ),
+      GoRoute(
+        path: '/create_goal',
+        name: 'create_goal',
+        pageBuilder: (context, state) => customTransitionPage(
+          context: context,
+          state: state,
+          child: const CreateGoalScreen(),
+        ),
       ),
     ],
   );

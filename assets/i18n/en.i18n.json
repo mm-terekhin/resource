@@ -1,12 +1,21 @@
 {
-    "appName": "Resource",
-    "todo": {
-        "title": "Todo",
-        "tasksTitle": "Tasks",
-        "goalsTitle": "Goals",
-        "ideasTitle": "Ideas"
-    },
-    "finance": {
-        "title": "Finance"
-    }
+  "appName": "Resource",
+  "goals": {
+    "title": "Goals"
+  },
+  "finance": {
+    "title": "Finance"
+  },
+  "shared": {
+    "priority": "Priority:",
+    "termUp": "Term up to:"
+  },
+  "textFieldLabel": {
+    "title": "Title...",
+    "comment": "Comment...",
+    "smallTaskAdd": "Add a sub-issue"
+  },
+  "buttonTitle": {
+    "save": "Save"
+  }
 }
