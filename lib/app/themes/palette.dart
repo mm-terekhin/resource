@@ -4,51 +4,41 @@ class Palette extends ThemeExtension<Palette> {
   const Palette({
     // Text
     required this.textPrimary,
-    required this.textSecondary,
-    required this.textContrast,
     // Backgrounds
     required this.bgPrimary,
-    required this.bgContrast,
+    required this.bgSecondary,
   });
 
-  const Palette.light()
+  const Palette.dark()
       : this(
           // Text
-          textPrimary: const Color(0xFF343A40),
-          textSecondary: const Color(0xFF707C8C),
-          textContrast: const Color(0xFFFFFFFF),
+          textPrimary: const Color(0xFFDEDCDC),
           // Backgrounds
-          bgPrimary: const Color(0xFFF4F4F4),
-          bgContrast: const Color(0xFFFFFFFF),
+          bgPrimary: const Color(0xFF191D23),
+          bgSecondary: const Color(0xFFDEDCDC),
         );
 
   // Text
   final Color textPrimary;
-  final Color textSecondary;
-  final Color textContrast;
 
   // Backgrounds
   final Color bgPrimary;
-  final Color bgContrast;
+  final Color bgSecondary;
 
   @override
   Palette copyWith({
     // Text
     Color? textPrimary,
-    Color? textSecondary,
-    Color? textContrast,
     // Backgrounds
     Color? bgPrimary,
-    Color? bgContrast,
+    Color? bgSecondary,
   }) {
     return Palette(
       // Text
       textPrimary: textPrimary ?? this.textPrimary,
-      textSecondary: textSecondary ?? this.textSecondary,
-      textContrast: textContrast ?? this.textContrast,
       // Backgrounds
       bgPrimary: bgPrimary ?? this.bgPrimary,
-      bgContrast: bgContrast ?? this.bgContrast,
+      bgSecondary: bgSecondary ?? this.bgSecondary,
     );
   }
 
@@ -61,11 +51,9 @@ class Palette extends ThemeExtension<Palette> {
     return Palette(
       // Text
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
-      textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
-      textContrast: Color.lerp(textContrast, other.textContrast, t)!,
       // Backgrounds
       bgPrimary: Color.lerp(bgPrimary, other.bgPrimary, t)!,
-      bgContrast: Color.lerp(bgContrast, other.bgContrast, t)!,
+      bgSecondary: Color.lerp(bgSecondary, other.bgSecondary, t)!,
     );
   }
 }
