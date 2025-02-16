@@ -1,0 +1,12 @@
+{
+    "appName": "Resource",
+    "todo": {
+        "title": "Todo",
+        "tasksTitle": "Tasks",
+        "goalsTitle": "Goals",
+        "ideasTitle": "Ideas"
+    },
+    "finance": {
+        "title": "Finance"
+    }
+}
