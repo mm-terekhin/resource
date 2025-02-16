@@ -14,7 +14,11 @@ class Shadows extends ThemeExtension<Shadows> {
             blurRadius: 6,
             offset: Offset(0, 2),
           ),
-          medium: const BoxShadow(),
+          medium: const BoxShadow(
+            color: Color(0x14747474),
+            blurRadius: 8,
+            offset: Offset(0, 6),
+          ),
           large: const BoxShadow(
             color: Color(0x0D000000),
             blurRadius: 10,

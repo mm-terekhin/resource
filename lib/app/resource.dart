@@ -4,6 +4,7 @@ import 'package:get_it/get_it.dart';
 import '../src/shared/shared.dart';
 import 'app.dart';
 import 'i18n/translations.g.dart';
+import 'themes/dark_theme_builder.dart';
 
 class Resource extends StatelessWidget {
   const Resource({super.key});
@@ -29,11 +30,12 @@ class Resource extends StatelessWidget {
   }
 
   Widget _getApp(BuildContext context) => MaterialApp.router(
-        locale: TranslationProvider.of(context).flutterLocale, // use provider
+        locale: TranslationProvider.of(context).flutterLocale,
+        // use provider
         supportedLocales: AppLocaleUtils.supportedLocales,
         localizationsDelegates: GlobalMaterialLocalizations.delegates,
         routerConfig: GetIt.instance<AppRouter>().router,
-        theme: LightThemeBuilder().build(),
+        theme: DarkThemeBuilder().build(),
       );
 }
 

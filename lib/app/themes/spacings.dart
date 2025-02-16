@@ -24,67 +24,55 @@ class Spacings extends ThemeExtension<Spacings> {
     required this.x18,
     required this.x19,
     required this.x20,
-    required this.x40,
-    required this.x47,
-    required this.x57,
-    required this.x67,
   });
 
   const Spacings.small()
       : this(
-    x1: 3,
-    x2: 6,
-    x3: 9,
-    x4: 12,
-    x5: 15,
-    x6: 18,
-    x7: 21,
-    x8: 24,
-    x9: 27,
-    x10: 30,
-    x11: 33,
-    x12: 36,
-    x13: 39,
-    x14: 42,
-    x15: 45,
-    x16: 48,
-    x17: 51,
-    x18: 54,
-    x19: 57,
-    x20: 60,
-    x40: 120,
-    x47: 141,
-    x57: 171,
-    x67: 201,
-  );
+          x1: 3,
+          x2: 6,
+          x3: 9,
+          x4: 12,
+          x5: 15,
+          x6: 18,
+          x7: 21,
+          x8: 24,
+          x9: 27,
+          x10: 30,
+          x11: 33,
+          x12: 36,
+          x13: 39,
+          x14: 42,
+          x15: 45,
+          x16: 48,
+          x17: 51,
+          x18: 54,
+          x19: 57,
+          x20: 60,
+        );
 
   const Spacings.regular()
       : this(
-    x1: 4,
-    x2: 8,
-    x3: 12,
-    x4: 16,
-    x5: 20,
-    x6: 24,
-    x7: 28,
-    x8: 32,
-    x9: 36,
-    x10: 40,
-    x11: 44,
-    x12: 48,
-    x13: 52,
-    x14: 56,
-    x15: 60,
-    x16: 64,
-    x17: 68,
-    x18: 72,
-    x19: 76,
-    x20: 80,
-    x40: 160,
-    x47: 188,
-    x57: 228,
-    x67: 268,
-  );
+          x1: 4,
+          x2: 8,
+          x3: 12,
+          x4: 16,
+          x5: 20,
+          x6: 24,
+          x7: 28,
+          x8: 32,
+          x9: 36,
+          x10: 40,
+          x11: 44,
+          x12: 48,
+          x13: 52,
+          x14: 56,
+          x15: 60,
+          x16: 64,
+          x17: 68,
+          x18: 72,
+          x19: 76,
+          x20: 80,
+        );
 
   final double x1;
   final double x2;
@@ -106,10 +94,6 @@ class Spacings extends ThemeExtension<Spacings> {
   final double x18;
   final double x19;
   final double x20;
-  final double x40;
-  final double x47;
-  final double x57;
-  final double x67;
 
   @override
   Spacings copyWith({
@@ -133,10 +117,6 @@ class Spacings extends ThemeExtension<Spacings> {
     double? x18,
     double? x19,
     double? x20,
-    double? x40,
-    double? x47,
-    double? x57,
-    double? x67,
   }) {
     return Spacings(
       x1: x1 ?? this.x1,
@@ -159,10 +139,6 @@ class Spacings extends ThemeExtension<Spacings> {
       x18: x18 ?? this.x18,
       x19: x19 ?? this.x19,
       x20: x20 ?? this.x20,
-      x40: x40 ?? this.x40,
-      x47: x47 ?? this.x47,
-      x57: x57 ?? this.x57,
-      x67: x67 ?? this.x67,
     );
   }
 
@@ -193,10 +169,6 @@ class Spacings extends ThemeExtension<Spacings> {
       x18: lerpDouble(x18, other.x18, t)!,
       x19: lerpDouble(x19, other.x19, t)!,
       x20: lerpDouble(x20, other.x20, t)!,
-      x40: lerpDouble(x40, other.x40, t)!,
-      x47: lerpDouble(x47, other.x47, t)!,
-      x57: lerpDouble(x57, other.x57, t)!,
-      x67: lerpDouble(x67, other.x67, t)!,
     );
   }
 }

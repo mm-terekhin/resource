@@ -19,8 +19,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          getTitle(location),
-          style: theme.textTheme.titleLarge,
+          i18n.appName,
         ),
       ),
       body: child,

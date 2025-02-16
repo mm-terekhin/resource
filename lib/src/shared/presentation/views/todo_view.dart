@@ -15,19 +15,7 @@ class TodoView extends StatelessWidget {
       builder: (context, state) {
         return CustomScrollView(
           physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverPadding(
-              padding: EdgeInsets.symmetric(
-                horizontal:
-                    device.isTablet ? theme.spacings.x6 : theme.spacings.x4,
-              ),
-              sliver: SliverPersistentHeader(
-                delegate: TodoAppBar(
-                  selectedCategory: state.category,
-                ),
-              ),
-            ),
-          ],
+          slivers: [],
         );
       },
     );
