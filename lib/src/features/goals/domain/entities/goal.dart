@@ -11,6 +11,15 @@ class Goal {
     required this.smallTasks,
   });
 
+  Goal.initial()
+      : title = '',
+        description = null,
+        isReady = false,
+        createdDate = DateTime.now(),
+        dateEnd = null,
+        priority = null,
+        smallTasks = [];
+
   final String title;
   final String? description;
   final bool isReady;
@@ -19,13 +28,15 @@ class Goal {
   final Priority? priority;
   final List<SmallTask> smallTasks;
 
-  Goal copyWith({ String? title,
+  Goal copyWith({
+    String? title,
     String? description,
     bool? isReady,
     DateTime? createdDate,
     DateTime? dateEnd,
     Priority? priority,
-    List<SmallTask>? smallTasks,}) =>
+    List<SmallTask>? smallTasks,
+  }) =>
       Goal(
         title: title ?? this.title,
         description: description ?? this.description,
@@ -35,4 +46,6 @@ class Goal {
         priority: priority ?? this.priority,
         smallTasks: smallTasks ?? this.smallTasks,
       );
+
+  bool get isValid => title.isNotEmpty;
 }

@@ -43,6 +43,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final TranslationsSharedEn shared = TranslationsSharedEn._(_root);
 	late final TranslationsTextFieldLabelEn textFieldLabel = TranslationsTextFieldLabelEn._(_root);
 	late final TranslationsButtonTitleEn buttonTitle = TranslationsButtonTitleEn._(_root);
+	late final TranslationsPriorityEn priority = TranslationsPriorityEn._(_root);
+	String get datePickerTitle => 'Select a date';
 }
 
 // Path: goals
@@ -98,6 +100,45 @@ class TranslationsButtonTitleEn {
 	String get save => 'Save';
 }
 
+// Path: priority
+class TranslationsPriorityEn {
+	TranslationsPriorityEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final TranslationsPriorityTitleEn title = TranslationsPriorityTitleEn._(_root);
+	late final TranslationsPriorityDescriptionEn description = TranslationsPriorityDescriptionEn._(_root);
+}
+
+// Path: priority.title
+class TranslationsPriorityTitleEn {
+	TranslationsPriorityTitleEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get upper => 'Upper';
+	String get high => 'High';
+	String get medium => 'Medium';
+	String get low => 'Low';
+	String get minimal => 'Minimal';
+}
+
+// Path: priority.description
+class TranslationsPriorityDescriptionEn {
+	TranslationsPriorityDescriptionEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get upper => 'Critically important, urgent';
+	String get high => 'Important, but not urgent';
+	String get medium => 'Attention, medium importance';
+	String get low => 'Low urgency';
+	String get minimal => 'Minimal importance';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 extension on Translations {
@@ -112,6 +153,17 @@ extension on Translations {
 			case 'textFieldLabel.comment': return 'Comment...';
 			case 'textFieldLabel.smallTaskAdd': return 'Add a sub-issue';
 			case 'buttonTitle.save': return 'Save';
+			case 'priority.title.upper': return 'Upper';
+			case 'priority.title.high': return 'High';
+			case 'priority.title.medium': return 'Medium';
+			case 'priority.title.low': return 'Low';
+			case 'priority.title.minimal': return 'Minimal';
+			case 'priority.description.upper': return 'Critically important, urgent';
+			case 'priority.description.high': return 'Important, but not urgent';
+			case 'priority.description.medium': return 'Attention, medium importance';
+			case 'priority.description.low': return 'Low urgency';
+			case 'priority.description.minimal': return 'Minimal importance';
+			case 'datePickerTitle': return 'Select a date';
 			default: return null;
 		}
 	}

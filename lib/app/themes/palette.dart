@@ -16,6 +16,7 @@ class Palette extends ThemeExtension<Palette> {
     required this.iconAccentFirst,
     // Buttons
     required this.buttonPrimary,
+    required this.buttonSecondary,
   });
 
   const Palette.dark()
@@ -34,6 +35,7 @@ class Palette extends ThemeExtension<Palette> {
           iconAccentFirst: const Color(0xFF57707A),
           // Button
           buttonPrimary: const Color(0xFF57707A),
+          buttonSecondary: const Color(0xFFC5BAC4),
         );
 
   // Text
@@ -53,6 +55,7 @@ class Palette extends ThemeExtension<Palette> {
 
   // Buttons
   final Color buttonPrimary;
+  final Color buttonSecondary;
 
   @override
   Palette copyWith({
@@ -70,6 +73,7 @@ class Palette extends ThemeExtension<Palette> {
     Color? iconAccentFirst,
     // Buttons
     Color? buttonPrimary,
+    Color? buttonSecondary,
   }) {
     return Palette(
       // Text
@@ -86,6 +90,7 @@ class Palette extends ThemeExtension<Palette> {
       iconAccentFirst: iconAccentFirst ?? this.iconAccentFirst,
       // Buttons
       buttonPrimary: buttonPrimary ?? this.buttonPrimary,
+      buttonSecondary: buttonSecondary ?? this.buttonSecondary,
     );
   }
 
@@ -111,6 +116,7 @@ class Palette extends ThemeExtension<Palette> {
       iconAccentFirst: Color.lerp(iconAccentFirst, other.iconAccentFirst, t)!,
       // Buttons
       buttonPrimary: Color.lerp(buttonPrimary, other.buttonPrimary, t)!,
+      buttonSecondary: Color.lerp(buttonSecondary, other.buttonSecondary, t)!,
     );
   }
 }

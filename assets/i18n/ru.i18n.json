@@ -6,16 +6,33 @@
   "finance": {
     "title": "Финансы"
   },
-  "shared" : {
-    "priority" : "Приоритет:",
-    "termUp" : "Срок до:"
+  "shared": {
+    "priority": "Приоритет:",
+    "termUp": "Срок до:"
   },
   "textFieldLabel": {
     "title": "Название...",
-    "comment" : "Комментарий...",
-    "smallTaskAdd" : "Добавить подзадачу"
+    "comment": "Комментарий...",
+    "smallTaskAdd": "Добавить подзадачу"
   },
-  "buttonTitle" : {
-    "save" : "Сохранить"
-  }
+  "buttonTitle": {
+    "save": "Сохранить"
+  },
+  "priority": {
+    "title": {
+      "upper": "Высший",
+      "high": "Высокий",
+      "medium": "Средний",
+      "low": "Низкий",
+      "minimal": "Минимальный"
+    },
+    "description": {
+      "upper": "Критически важно, срочно",
+      "high": "Важно, но не срочно",
+      "medium": "Внимание, средняя важность",
+      "low": "Низкая срочность",
+      "minimal": "Минимальная важность"
+    }
+  },
+  "datePickerTitle" : "Выберите дату"
 }

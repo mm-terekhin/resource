@@ -17,5 +17,22 @@
   },
   "buttonTitle": {
     "save": "Save"
-  }
+  },
+  "priority": {
+    "title": {
+      "upper": "Upper",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "minimal": "Minimal"
+    },
+    "description": {
+      "upper": "Critically important, urgent",
+      "high": "Important, but not urgent",
+      "medium": "Attention, medium importance",
+      "low": "Low urgency",
+      "minimal": "Minimal importance"
+    }
+  },
+  "datePickerTitle" : "Select a date"
 }
