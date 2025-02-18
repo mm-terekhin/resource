@@ -6,6 +6,6 @@ class GoalsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GoalsView();
+    return const GoalsView();
   }
 }

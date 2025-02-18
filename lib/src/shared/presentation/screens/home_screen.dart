@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../app/app.dart';
 import '../../shared.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,7 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    Theme.of(context);
     final router = GoRouter.of(context);
 
     return Scaffold(
@@ -28,7 +27,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () => router.pushNamed(
                 'create_goal',
               ),
-              child: FaIcon(
+              child: const FaIcon(
                 FontAwesomeIcons.plus,
               ),
             )

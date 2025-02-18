@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import '../../../../../app/app.dart';
 import '../../../../../app/i18n/translations.g.dart';
-import '../../../../../core/extensions/date_time_extension.dart';
 import '../../../../shared/shared.dart';
 import '../../goals.dart';
 
@@ -27,8 +26,8 @@ class CreateGoalView extends StatelessWidget {
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.endDocked,
             floatingActionButton: FloatingActionButton.extended(
-              backgroundColor: theme.palette.buttonPrimary.withOpacity(
-                state.goal.isValid ? 1 : 0.2,
+              backgroundColor: theme.palette.buttonPrimary.withValues(
+                alpha: state.goal.isValid ? 1 : 0.2,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(
@@ -45,8 +44,8 @@ class CreateGoalView extends StatelessWidget {
               label: Text(
                 i18n.buttonTitle.save,
                 style: theme.textTheme.titleSmall?.copyWith(
-                  color: theme.palette.textPrimary.withOpacity(
-                    state.goal.isValid ? 1 : 0.2,
+                  color: theme.palette.textPrimary.withValues(
+                    alpha: state.goal.isValid ? 1 : 0.2,
                   ),
                 ),
               ),
@@ -89,21 +88,19 @@ class CreateGoalView extends StatelessWidget {
                     padding: EdgeInsets.only(
                       left: theme.spacings.x6,
                     ),
-                    child: TextField(
-                      style: theme.textTheme.bodyLarge,
-                      maxLines: null,
-                      maxLength: 1000,
-                      onChanged: (value) {},
-                      decoration: InputDecoration(
-                        counter: Container(),
-                        hintStyle: theme.textTheme.bodyLarge?.copyWith(
-                          color: theme.palette.textSecondary,
-                        ),
-                        border: const UnderlineInputBorder(
-                          borderSide: BorderSide.none,
-                        ),
-                        hintText: i18n.textFieldLabel.smallTaskAdd,
-                      ),
+                    child: SubtaskFields(
+                      subtasks: state.goal.subtask,
+                      onChange: (value) {
+                        final newGoal = state.goal.copyWith(
+                          subtask: value,
+                        );
+
+                        context.read<CreateGoalBloc>().add(
+                              ChangeCreateGoalEvent(
+                                goal: newGoal,
+                              ),
+                            );
+                      },
                     ),
                   ),
                   Padding(
@@ -132,8 +129,8 @@ class CreateGoalView extends StatelessWidget {
                             backgroundColor: WidgetStatePropertyAll(
                               (state.goal.priority?.toColor() ??
                                       theme.palette.buttonPrimary)
-                                  .withOpacity(
-                                0.5,
+                                  .withValues(
+                                alpha: 0.5,
                               ),
                             ),
                           ),
@@ -175,8 +172,8 @@ class CreateGoalView extends StatelessWidget {
                         child: ElevatedButton(
                           style: ButtonStyle(
                             backgroundColor: WidgetStatePropertyAll(
-                              theme.palette.buttonPrimary.withOpacity(
-                                0.5,
+                              theme.palette.buttonPrimary.withValues(
+                                alpha: 0.5,
                               ),
                             ),
                           ),
@@ -204,7 +201,8 @@ class CreateGoalView extends StatelessWidget {
                                     ? DateFormat(
                                         'dd MMM yyyy',
                                         TranslationProvider.of(context)
-                                            .flutterLocale.languageCode,
+                                            .flutterLocale
+                                            .languageCode,
                                       ).format(state.goal.dateEnd!)
                                     : '',
                                 maxLines: 1,
@@ -256,8 +254,8 @@ class CreateGoalView extends StatelessWidget {
               child: ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: WidgetStatePropertyAll(
-                    priority.toColor().withOpacity(
-                          0.5,
+                    priority.toColor().withValues(
+                          alpha: 0.5,
                         ),
                   ),
                 ),

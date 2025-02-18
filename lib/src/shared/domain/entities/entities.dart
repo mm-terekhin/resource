@@ -1,3 +1,3 @@
 export 'device.dart';
 export 'priority.dart';
-export 'small_task.dart';
+export 'subtask.dart';

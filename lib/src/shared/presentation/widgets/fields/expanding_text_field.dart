@@ -33,7 +33,8 @@ class ExpandingTextField extends StatelessWidget {
         borderRadius: BorderRadius.all(
           theme.radii.x4,
         ),
-        color: theme.palette.bgSecondary.withOpacity(
+        color: theme.palette.bgSecondary.withValues(
+          alpha:
           0.5,
         ),
       ),

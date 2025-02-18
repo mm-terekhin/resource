@@ -57,7 +57,9 @@ class DarkThemeBuilder extends ThemeBuilder {
   IconButtonThemeData _iconButtonThemeBuilder() => IconButtonThemeData(
         style: ButtonStyle(
           overlayColor: WidgetStatePropertyAll(
-            _palette.iconPrimary.withOpacity(0.5),
+            _palette.iconPrimary.withValues(
+              alpha: 0.5,
+            ),
           ),
           iconSize: const WidgetStatePropertyAll(
             24,

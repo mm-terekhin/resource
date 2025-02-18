@@ -27,7 +27,8 @@ class HomeNavigationBar extends StatelessWidget {
               horizontal: theme.spacings.x4,
             ),
             decoration: BoxDecoration(
-              color: theme.palette.bgSecondary.withOpacity(
+              color: theme.palette.bgSecondary.withValues(
+                alpha:
                 0.13,
               ),
               borderRadius: BorderRadius.all(
