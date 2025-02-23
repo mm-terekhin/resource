@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'subtask.g.dart';
+
+@JsonSerializable()
 class Subtask {
   const Subtask({
     required this.title,
@@ -8,6 +13,11 @@ class Subtask {
     required this.title,
     this.isReady = false,
   });
+
+  factory Subtask.fromJson(Map<String, dynamic> json) =>
+      _$SubtaskFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubtaskToJson(this);
 
   final String title;
   final bool isReady;

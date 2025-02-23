@@ -1,12 +1,10 @@
 import 'dart:convert';
-
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import '../../core/core.dart';
 import '../../src/features/features.dart';
 import '../../src/shared/shared.dart';
 import '../app.dart';
-import '../app_router.dart';
 
 final _getIt = GetIt.instance;
 
@@ -45,15 +43,49 @@ Future<void> _registerDataSources() async {
     encryptionKey: _getIt<Config>().databaseEncryptionKey ?? '',
   );
 
-  print(_getIt<Config>().databaseEncryptionKey);
+  _getIt.registerSingletonAsync<LocalGoalsDataSource>(
+    () async => database,
+  );
 }
 
-Future<void> _registerRepositories() async {}
+Future<void> _registerRepositories() async {
+  _getIt.registerLazySingleton<GoalsRepository>(
+    () => GoalsRepositoryImpl(
+      localGoalsDataSource: _getIt(),
+    ),
+  );
+}
 
-Future<void> _registerUseCases() async {}
+Future<void> _registerUseCases() async {
+  _getIt
+    ..registerLazySingleton<CreateGoalCase>(
+      () => CreateGoalCase(
+        goalsRepository: _getIt(),
+      ),
+    )
+    ..registerLazySingleton<GetGoalsCase>(
+      () => GetGoalsCase(
+        goalsRepository: _getIt(),
+      ),
+    )
+    ..registerLazySingleton<StreamGoalsCase>(
+      () => StreamGoalsCase(
+        goalsRepository: _getIt(),
+      ),
+    );
+}
 
 Future<void> _registerBlocs() async {
-  _getIt.registerFactory<CreateGoalBloc>(
-    CreateGoalBloc.new,
-  );
+  _getIt
+    ..registerLazySingleton<GoalsBloc>(
+      () => GoalsBloc(
+        getGoalsCase: _getIt(),
+        streamGoalsCase: _getIt(),
+      ),
+    )
+    ..registerFactory<CreateGoalBloc>(
+      () => CreateGoalBloc(
+        createGoalCase: _getIt(),
+      ),
+    );
 }

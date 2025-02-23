@@ -8,7 +8,7 @@ class Goal {
     required this.createdDate,
     required this.dateEnd,
     required this.priority,
-    required this.subtask,
+    required this.subtasks,
   });
 
   Goal.initial()
@@ -18,7 +18,7 @@ class Goal {
         createdDate = DateTime.now(),
         dateEnd = null,
         priority = null,
-        subtask = [];
+        subtasks = [];
 
   final String title;
   final String? description;
@@ -26,7 +26,7 @@ class Goal {
   final DateTime createdDate;
   final DateTime? dateEnd;
   final Priority? priority;
-  final List<Subtask> subtask;
+  final List<Subtask> subtasks;
 
   Goal copyWith({
     String? title,
@@ -35,7 +35,7 @@ class Goal {
     DateTime? createdDate,
     DateTime? dateEnd,
     Priority? priority,
-    List<Subtask>? subtask,
+    List<Subtask>? subtasks,
   }) =>
       Goal(
         title: title ?? this.title,
@@ -44,7 +44,7 @@ class Goal {
         createdDate: createdDate ?? this.createdDate,
         dateEnd: dateEnd ?? this.dateEnd,
         priority: priority ?? this.priority,
-        subtask: subtask ?? this.subtask,
+        subtasks: subtasks ?? this.subtasks,
       );
 
   bool get isValid => title.isNotEmpty;

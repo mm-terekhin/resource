@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import '../../../../../app/app.dart';
 import '../../../../../app/i18n/translations.g.dart';
@@ -12,12 +13,13 @@ class CreateGoalView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final router = GoRouter.of(context);
 
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
       },
-      child: BlocBuilder<CreateGoalBloc, CreateGoalState>(
+      child: BlocConsumer<CreateGoalBloc, CreateGoalState>(
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
@@ -89,10 +91,10 @@ class CreateGoalView extends StatelessWidget {
                       left: theme.spacings.x6,
                     ),
                     child: SubtaskFields(
-                      subtasks: state.goal.subtask,
+                      subtasks: state.goal.subtasks,
                       onChange: (value) {
                         final newGoal = state.goal.copyWith(
-                          subtask: value,
+                          subtasks: value,
                         );
 
                         context.read<CreateGoalBloc>().add(
@@ -218,6 +220,11 @@ class CreateGoalView extends StatelessWidget {
               ),
             ),
           );
+        },
+        listener: (context, state) {
+          if (state is SuccessCreateGoalState) {
+            router.goNamed('goals');
+          }
         },
       ),
     );
